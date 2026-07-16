@@ -266,11 +266,12 @@ p {
 .mega-menu__heading {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-family: var(--mck-serif);
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   font-weight: 700;
   color: var(--mck-navy);
+  text-decoration: none;
   margin-bottom: 24px;
 }
 
@@ -321,6 +322,67 @@ p {
 .mega-menu__link:hover {
   color: var(--mck-blue);
   text-decoration: underline;
+}
+
+.mega-menu--insights {
+  padding: 0;
+}
+
+.mega-menu--insights .mega-menu__inner {
+  max-width: none;
+  padding: 0;
+}
+
+.mega-menu--insights .mega-menu__heading {
+  margin-bottom: 22px;
+}
+
+.mega-menu__insights-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  min-height: 460px;
+  align-items: stretch;
+}
+
+.mega-menu__insights-main {
+  padding: 24px 36px 40px;
+}
+
+.mega-menu__flow--insights {
+  column-count: 2;
+  column-gap: 0;
+}
+
+.mega-menu__featured {
+  background: #efefef;
+  padding: 14px 28px 32px;
+  height: 100%;
+}
+
+.mega-menu__featured-link {
+  display: block;
+  color: var(--mck-navy);
+  text-decoration: none;
+  margin-top: 18px;
+}
+
+.mega-menu__featured-title {
+  display: block;
+  font-size: 1.55rem;
+  font-family: var(--mck-serif);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.mega-menu__featured-desc {
+  display: block;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #4a4a4a;
+}
+
+.mega-menu__featured-link:hover .mega-menu__featured-title {
+  color: var(--mck-blue);
 }
 
 /* Menu Overlay (Hamburger) */

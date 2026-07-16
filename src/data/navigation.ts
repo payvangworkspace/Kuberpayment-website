@@ -87,17 +87,42 @@ export const mainNav: NavItem[] = [
       {
         title: 'Featured',
         items: [
-          { label: 'Featured Insights', path: '/insights', description: 'Our latest thinking' },
-          { label: 'McKinsey Explainers', path: '/insights', description: 'Clear answers to complex questions' },
-          { label: 'McKinsey Themes', path: '/insights', description: 'Explore topics in depth' },
+          {
+            label: 'Ask McKinsey',
+            path: '/insights',
+            description:
+              'Get answers to the questions that matter to you—based on McKinsey insights. This pilot of our new gen AI chatbot covers digital, AI, technology, media, and telecoms. Other topics coming soon.',
+          },
+          {
+            label: 'McKinsey Quarterly',
+            path: '/insights',
+            description:
+              'Our flagship business publication has been defining and informing the senior-management agenda since 1964.',
+          },
+          {
+            label: 'McKinsey Global Institute',
+            path: '/insights',
+            description:
+              'Our mission is to help leaders in multiple sectors develop a deeper understanding of the global economy.',
+          },
         ],
       },
       {
-        title: 'Research & Journals',
+        title: 'Go Deeper',
         items: [
-          { label: 'McKinsey Global Institute', path: '/insights', description: 'Research on the global economy' },
-          { label: 'McKinsey Quarterly', path: '/insights', description: 'Our business journal' },
-          { label: 'Case Studies', path: '/insights', description: 'Client impact stories' },
+          { label: 'Author Talks', path: '/insights' },
+          { label: 'Case Studies', path: '/insights' },
+          { label: 'Global Surveys', path: '/insights' },
+          { label: 'McKinsey Explainers', path: '/insights' },
+          { label: 'McKinsey Health Institute', path: '/insights' },
+          { label: 'McKinsey Institute for Economic Mobility', path: '/insights' },
+          { label: 'McKinsey Live', path: '/insights' },
+          { label: 'McKinsey on Lives & Legacies', path: '/insights' },
+          { label: 'McKinsey Podcast', path: '/insights' },
+          { label: 'McKinsey Themes', path: '/insights' },
+          { label: 'Our article alerts', path: '/insights' },
+          { label: 'Our newsletters', path: '/insights' },
+          { label: 'Week in Charts', path: '/insights' },
         ],
       },
     ],
