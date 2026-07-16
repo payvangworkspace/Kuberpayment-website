@@ -1,11 +1,29 @@
 import { Link, useParams } from 'react-router-dom'
 import { Breadcrumb } from '../components/Breadcrumb'
 import { getIndustryBySlug } from '../data/industries'
+import { mainNav } from '../data/navigation'
 import { capabilities } from '../data/capabilities'
+
+const industriesNav = mainNav.find((n) => n.label === 'Industries')
+const allIndustries = industriesNav?.groups?.flatMap((g) => g.items) ?? []
+
+function getIndustryFromNav(slug: string) {
+  const item = allIndustries.find((i) => i.path === `/industries/${slug}`)
+  if (!item) return undefined
+  return {
+    slug,
+    name: item.label,
+    tagline: item.description ?? '',
+    description: `We help ${item.label.toLowerCase()} organizations navigate disruption, accelerate growth, and build lasting competitive advantage. Our teams combine deep sector knowledge with functional expertise to deliver measurable impact.`,
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
+    highlights: ['Strategy & growth', 'Digital transformation', 'Operational excellence', 'Sustainability'],
+    capabilities: ['Strategy', 'Operations', 'Technology', 'Sustainability'],
+  }
+}
 
 export function IndustryDetailPage() {
   const { slug } = useParams<{ slug: string }>()
-  const industry = getIndustryBySlug(slug ?? '')
+  const industry = getIndustryBySlug(slug ?? '') ?? getIndustryFromNav(slug ?? '')
 
   if (!industry) {
     return (
@@ -56,7 +74,7 @@ export function IndustryDetailPage() {
             <ul>
               {industry.capabilities.map((cap) => {
                 const capability = capabilities.find(
-                  (c) => c.name.includes(cap) || c.slug.includes(cap.toLowerCase())
+                  (c) => c.name.includes(cap) || c.slug.includes(cap.toLowerCase()),
                 )
                 return (
                   <li key={cap}>

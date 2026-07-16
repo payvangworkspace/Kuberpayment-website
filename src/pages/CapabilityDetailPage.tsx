@@ -3,10 +3,32 @@ import { Breadcrumb } from '../components/Breadcrumb'
 import { ArticleCard } from '../components/ArticleCard'
 import { getCapabilityBySlug } from '../data/capabilities'
 import { getInsightBySlug } from '../data/insights'
+import { mainNav } from '../data/navigation'
+
+const capabilitiesNav = mainNav.find((n) => n.label === 'Capabilities')
+const navCapabilities = capabilitiesNav?.groups?.flatMap((g) => g.items) ?? []
+
+function getCapabilityFromNav(slug: string) {
+  const item = navCapabilities.find((i) => i.path === `/capabilities/${slug}`)
+  if (!item) return undefined
+  return {
+    slug,
+    name: item.label,
+    tagline: item.description ?? '',
+    description: `Our ${item.label} practice helps organizations tackle their most pressing challenges and capture new opportunities. We combine deep expertise with proven methodologies to deliver lasting impact.`,
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80',
+    services: [
+      { title: 'Advisory', description: 'Strategic guidance tailored to your context' },
+      { title: 'Implementation', description: 'Hands-on support to deliver results' },
+      { title: 'Capability Building', description: 'Embed new skills and ways of working' },
+    ],
+    relatedInsights: ['ai-enterprise-transformation', 'sustainable-growth-strategy'],
+  }
+}
 
 export function CapabilityDetailPage() {
   const { slug } = useParams<{ slug: string }>()
-  const capability = getCapabilityBySlug(slug ?? '')
+  const capability = getCapabilityBySlug(slug ?? '') ?? getCapabilityFromNav(slug ?? '')
 
   if (!capability) {
     return (
