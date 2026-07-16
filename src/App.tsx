@@ -10,6 +10,7 @@ import { InsightDetailPage } from './pages/InsightDetailPage'
 import { AboutPage } from './pages/AboutPage'
 import { CareersPage } from './pages/CareersPage'
 import { ContactPage } from './pages/ContactPage'
+import { BlogPage } from './pages/BlogPage'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/blog" element={<BlogPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,33 +1,72 @@
 import { Link } from 'react-router-dom'
+import { ChatbotWidget } from '../components/ChatbotWidget'
 import { ArticleCard } from '../components/ArticleCard'
-import { insights, getFeaturedInsights } from '../data/insights'
+import { insights } from '../data/insights'
 import { industries } from '../data/industries'
 import { capabilities } from '../data/capabilities'
 
+const heroImages = {
+  main: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80',
+  grid: [
+    'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=200&q=80',
+    'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&q=80',
+    'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&q=80',
+    'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=200&q=80',
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80',
+    'https://images.unsplash.com/photo-1491438590914-b09a426d2aae?w=200&q=80',
+    'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=200&q=80',
+    'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=200&q=80',
+    'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=200&q=80',
+  ],
+  featured: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80',
+}
+
 export function HomePage() {
-  const featured = getFeaturedInsights()
   const latestInsights = insights.slice(0, 3)
 
   return (
     <>
-      <section className="hero hero--large">
-        <div className="container">
-          <div className="hero__content">
-            <p className="hero__eyebrow">McKinsey & Company</p>
-            <h1>Game-changing work. People-powered growth.</h1>
-            <p>
-              At McKinsey, we help you think bigger, build stronger, and expand opportunity for all.
-            </p>
-            <div className="hero__actions">
-              <Link to="/insights" className="btn btn--primary">
-                Explore our insights
-              </Link>
-              <Link to="/about" className="btn btn--outline">
-                About our firm
+      <section className="home-hero">
+        <div className="home-hero__grid">
+          <div className="home-hero__left">
+            <div className="home-hero__headline-row">
+              <h1 className="home-hero__title">What&apos;s your next brilliant move?</h1>
+              <Link to="/insights" className="home-hero__arrow-btn" aria-label="Explore insights">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
               </Link>
             </div>
+            <p className="home-hero__subtitle">
+              Game-changing work. People and AI powering growth. At McKinsey, we help you think bigger, build stronger, and expand opportunity for all.
+            </p>
+            <div className="home-hero__images">
+              <div className="home-hero__main-image">
+                <img src={heroImages.main} alt="" />
+              </div>
+              <div className="home-hero__image-grid">
+                {heroImages.grid.map((src, i) => (
+                  <div key={i} className="home-hero__grid-item">
+                    <img src={src} alt="" loading="lazy" />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
+
+          <Link to="/insights/ai-enterprise-transformation" className="home-hero__featured">
+            <div className="home-hero__featured-bg">
+              <img src={heroImages.featured} alt="" />
+            </div>
+            <div className="home-hero__featured-content">
+              <span className="home-hero__featured-tag">INTERACTIVE</span>
+              <h2 className="home-hero__featured-title">
+                What to read next: McKinsey&apos;s 2026 annual book recommendations
+              </h2>
+            </div>
+          </Link>
         </div>
+        <ChatbotWidget />
       </section>
 
       <section className="section">
@@ -53,27 +92,7 @@ export function HomePage() {
         </div>
       </section>
 
-      {featured[0] && (
-        <section className="section section--gray">
-          <div className="container">
-            <div className="featured-split">
-              <div className="featured-split__image">
-                <img src={featured[0].image} alt="" />
-              </div>
-              <div className="featured-split__content">
-                <p className="hero__eyebrow">{featured[0].category}</p>
-                <h2>{featured[0].title}</h2>
-                <p>{featured[0].excerpt}</p>
-                <Link to={`/insights/${featured[0].slug}`} className="btn btn--primary">
-                  Read the article
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      <section className="section">
+      <section className="section section--gray">
         <div className="container">
           <div className="section__header">
             <h2>Our latest thinking</h2>
@@ -90,7 +109,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section section--gray">
+      <section className="section">
         <div className="container">
           <div className="section__header">
             <h2>Industries we serve</h2>
