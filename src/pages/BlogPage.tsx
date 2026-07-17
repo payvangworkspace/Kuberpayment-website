@@ -43,8 +43,8 @@ export function BlogPage() {
     <>
       <div className="page-header">
         <div className="container">
-          <Breadcrumb items={[{ label: 'Home', path: '/' }, { label: 'McKinsey Blog' }]} />
-          <h1>McKinsey Blog</h1>
+          <Breadcrumb items={[{ label: 'Home', path: '/' }, { label: 'KuberPay Blog' }]} />
+          <h1>KuberPay Blog</h1>
           <p>
             Stories from inside our firm — our people, our culture, and the work we do to create lasting impact.
           </p>

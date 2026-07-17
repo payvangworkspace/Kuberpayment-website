@@ -70,7 +70,7 @@ export function Footer() {
       </div>
 
       <div className="container footer__bottom">
-        <p>© 2026 McKinsey & Company. All rights reserved.</p>
+        <p>© 2026 KuberPay. All rights reserved.</p>
         <div className="footer__legal">
           {footerLinks.legal.map((link) => (
             <Link key={link.label} to={link.path}>

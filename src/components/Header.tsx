@@ -27,7 +27,7 @@ export function Header() {
             </svg>
           </button>
           <Link to="/" className="header__logo">
-            McKinsey & Company
+            KuberPay
           </Link>
         </div>
 

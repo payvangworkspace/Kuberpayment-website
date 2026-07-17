@@ -36,7 +36,7 @@ export function MenuOverlay() {
             </svg>
           </button>
           <Link to="/" className="menu-overlay__logo" onClick={closeMenu}>
-            McKinsey & Company
+            KuberPay
           </Link>
           <div className="menu-overlay__header-spacer" />
         </div>
