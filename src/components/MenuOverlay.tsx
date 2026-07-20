@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { mainNav, type NavItem } from '../data/navigation'
 import { useMenu } from '../context/MenuContext'
 import { useAuthModal } from '../context/AuthModalContext'
+import { Logo } from './Logo'
 
 export function MenuOverlay() {
   const { isOpen, closeMenu } = useMenu()
@@ -37,8 +38,8 @@ export function MenuOverlay() {
               <path d="M18 6L6 18M6 6l12 12" />
             </svg>
           </button>
-          <Link to="/" className="menu-overlay__logo" onClick={closeMenu}>
-            KuberPayment
+          <Link to="/" className="menu-overlay__logo" onClick={closeMenu} aria-label="Kuber Payment home">
+            <Logo variant="menu" />
           </Link>
           <div className="menu-overlay__header-spacer" />
         </div>

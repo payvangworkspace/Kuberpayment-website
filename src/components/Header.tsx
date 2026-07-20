@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { mainNav } from '../data/navigation'
 import { useMenu } from '../context/MenuContext'
 import { useAuthModal } from '../context/AuthModalContext'
+import { Logo } from './Logo'
 
 export function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
@@ -28,8 +29,8 @@ export function Header() {
               <path d="M3 6h18M3 12h18M3 18h18" />
             </svg>
           </button>
-          <Link to="/" className="header__logo">
-            KuberPayment
+          <Link to="/" className="header__logo" aria-label="Kuber Payment home">
+            <Logo variant="header" />
           </Link>
         </div>
 

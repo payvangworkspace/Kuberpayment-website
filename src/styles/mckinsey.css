@@ -16,6 +16,9 @@
   --header-height: 72px;
   --max-width: 1440px;
   --content-width: 1120px;
+  --kuber-gold: #c4a052;
+  --kuber-gold-dark: #a8863f;
+  --kuber-maroon: #7a2332;
 }
 
 *,
@@ -149,17 +152,37 @@ p {
 }
 
 .header__logo {
-  color: var(--mck-navy);
-  font-family: var(--mck-serif);
-  font-size: 1.125rem;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
 }
 
-/* .header__logo:hover {
-  color: var(--mck-navy);
-} */
+.header__logo:hover {
+  opacity: 0.92;
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.brand-logo--header {
+  height: 40px;
+}
+
+.brand-logo--menu {
+  height: 34px;
+}
+
+.header--dark .brand-logo text[fill='#7a2332'] {
+  fill: #d46b7d;
+}
+
+.header--dark .brand-logo path[fill='#7a2332'] {
+  fill: #d46b7d;
+}
 
 .header__nav {
   display: flex;
@@ -428,15 +451,15 @@ p {
 }
 
 .menu-overlay__logo {
-  font-family: var(--mck-serif);
-  font-size: 1rem;
-  color: #fff;
-  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex: 1;
+  text-decoration: none;
 }
 
 .menu-overlay__logo:hover {
-  color: rgba(255, 255, 255, 0.85);
+  opacity: 0.9;
 }
 
 .menu-overlay__header-spacer {
@@ -2058,7 +2081,11 @@ p {
   }
 
   .header__logo {
-    font-size: 1rem;
+    max-width: calc(100vw - 120px);
+  }
+
+  .brand-logo--header {
+    height: 32px;
   }
 
   .card-grid,
