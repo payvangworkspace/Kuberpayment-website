@@ -1278,6 +1278,11 @@ p {
   max-width: 640px;
 }
 
+.page-header--contact .container--narrow {
+  padding-left: clamp(24px, 5vw, 64px);
+  padding-right: clamp(24px, 5vw, 64px);
+}
+
 /* Breadcrumb */
 .breadcrumb {
   display: flex;
@@ -1547,11 +1552,16 @@ p {
 }
 
 /* Contact */
+.contact-section .container--narrow {
+  padding-left: clamp(24px, 5vw, 64px);
+  padding-right: clamp(24px, 5vw, 64px);
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  padding: 64px 0;
+  gap: clamp(32px, 5vw, 64px);
+  width: 100%;
 }
 
 .contact-form {
