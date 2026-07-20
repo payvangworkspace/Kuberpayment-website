@@ -14,7 +14,7 @@ export const legalPages: LegalPageContent[] = [
   {
     slug: 'privacy-policy',
     title: 'Privacy Policy',
-    intro: 'This policy describes how KuberPay collects, uses, and protects your personal information when you use our website and services.',
+    intro: 'This policy describes how KuberPayment collects, uses, and protects your personal information when you use our website and services.',
     sections: [
       {
         title: 'Information we collect',
@@ -69,7 +69,7 @@ export const legalPages: LegalPageContent[] = [
   {
     slug: 'terms-of-use',
     title: 'Terms of Use',
-    intro: 'These terms govern your access to and use of the KuberPay website and the content made available on it.',
+    intro: 'These terms govern your access to and use of the KuberPayment website and the content made available on it.',
     sections: [
       {
         title: 'Acceptance of terms',
@@ -88,7 +88,7 @@ export const legalPages: LegalPageContent[] = [
         title: 'Disclaimer',
         paragraphs: [
           'We strive to keep the information on this site accurate and up to date, but we make no warranties regarding completeness or suitability for any particular purpose.',
-          'KuberPay shall not be liable for any damages arising from your use of this website or reliance on its content.',
+          'KuberPayment shall not be liable for any damages arising from your use of this website or reliance on its content.',
         ],
       },
     ],

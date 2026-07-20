@@ -163,7 +163,7 @@ export const mainNav: NavItem[] = [
     ],
   },
   {
-    label: 'KuberPay Blog',
+    label: 'KuberPayment Blog',
     path: '/blog',
     hasSubmenu: false,
   },
@@ -180,7 +180,7 @@ export const footerLinks = {
     { label: 'Capabilities', path: '/capabilities' },
     { label: 'Our Insights', path: '/insights' },
     { label: 'Tech & AI', path: '/capabilities/tech-ai' },
-    { label: 'KuberPay Blog', path: '/blog' },
+    { label: 'KuberPayment Blog', path: '/blog' },
   ],
   about: [
     { label: 'About Us', path: '/about' },
