@@ -2,10 +2,12 @@ import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { mainNav } from '../data/navigation'
 import { useMenu } from '../context/MenuContext'
+import { useAuthModal } from '../context/AuthModalContext'
 
 export function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const { openMenu } = useMenu()
+  const { openSignIn } = useAuthModal()
   const location = useLocation()
   const isDark = location.pathname === '/'
 
@@ -167,9 +169,13 @@ export function Header() {
 
         <div className="header__actions">
           <div className="header__auth">
-            <button type="button" className="header__auth-link">Sign In</button>
+            <button type="button" className="header__auth-link" onClick={openSignIn}>
+              Sign In
+            </button>
             <span className="header__auth-sep">|</span>
-            <button type="button" className="header__auth-link">Subscribe</button>
+            <Link to="/register" className="header__auth-link">
+              Register
+            </Link>
           </div>
           <button type="button" className="header__search" aria-label="Search">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">

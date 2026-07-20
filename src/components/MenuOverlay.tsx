@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { mainNav, type NavItem } from '../data/navigation'
 import { useMenu } from '../context/MenuContext'
+import { useAuthModal } from '../context/AuthModalContext'
 
 export function MenuOverlay() {
   const { isOpen, closeMenu } = useMenu()
+  const { openSignIn } = useAuthModal()
   const [activeItem, setActiveItem] = useState<NavItem | null>(null)
 
   useEffect(() => {
@@ -70,7 +72,14 @@ export function MenuOverlay() {
         </nav>
 
         <div className="menu-overlay__footer">
-          <button type="button" className="menu-overlay__signin">
+          <button
+            type="button"
+            className="menu-overlay__signin"
+            onClick={() => {
+              closeMenu()
+              openSignIn()
+            }}
+          >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <circle cx="12" cy="8" r="4" />
               <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
