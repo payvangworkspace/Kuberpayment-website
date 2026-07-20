@@ -121,7 +121,7 @@ export function getRelatedInsights(
 ): Insight[] {
   const preferred = preferredSlugs
     .map((s) => getInsightBySlug(s))
-    .filter((i): i is Insight => Boolean(i) && i.slug !== excludeSlug)
+    .filter((i): i is Insight => i !== undefined && Boolean(i) && i.slug !== excludeSlug)
 
   const current = getInsightBySlug(excludeSlug)
   const sameCategory = insights.filter(
